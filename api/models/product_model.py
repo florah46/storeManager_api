@@ -7,6 +7,10 @@ import datetime
 from flask import jsonify
 
 
+class Home:
+    @staticmethod
+    def homePage():
+        return ("Welcome to Store Manager"), 200
 
 class Product:
     increment = 0

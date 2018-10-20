@@ -4,6 +4,9 @@ from flask.views import MethodView
 from api.models.product_model import Product
 from api.models.product_model import SaleOrder
 
+class HomeController(MethodView):
+    def get_home():
+        return ("Welcome to Store Manager"), 200
 
 class ProductController(MethodView):
     name = None

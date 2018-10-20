@@ -14,6 +14,10 @@ class Routes:
         :param app:
         :return:
         """
+        app.add_url_rule('/', view_func=HomeController.as_view('homePage'),
+                        methods=["GET"], strict_slashes=False)
+
+
         app.add_url_rule('/api/v1/products/', view_func=ProductController.as_view('add_product'),
                         methods=["POST"], strict_slashes=False)
 
