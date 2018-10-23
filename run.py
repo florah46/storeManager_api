@@ -3,7 +3,7 @@ file to run the end points
 """
 
 from flask import Flask
-from api.views.view import Routes
+from api.views.views import Routes
 
 app = Flask(__name__)
 app.env = 'development'
