@@ -17,3 +17,6 @@ class Routes:
 
         app.add_url_rule('/api/v1/products/', view_func=ProductController.as_view('add_product'),
                         methods=["POST"], strict_slashes=False)
+                        
+        app.add_url_rule('/api/v1/products/', view_func=ProductController.as_view('get_products'),
+                        methods=["GET"], strict_slashes=False)
