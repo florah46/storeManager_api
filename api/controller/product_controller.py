@@ -1,6 +1,7 @@
 from flask import request, jsonify
 from flask.views import MethodView
 from api.models.product_models import Product
+from api.models.product_models import SaleOrder
 
 
 
@@ -46,3 +47,26 @@ class ProductController(MethodView):
                     'data': item
                 }
                 return jsonify(response_object), 200    
+
+
+
+class SaleOrderController(MethodView):
+    seller = None
+    name = None
+    brand = None
+    price = None
+    quantity = None
+    sale_data = SaleOrder()
+
+    def post(self):
+
+        #post_data = request.get.json()
+
+        sale_added = self.sale_data.add_saleOrder(self.seller,self.name,self.brand,self.price,self.quantity)
+
+        response_object = {
+            'status': 'Successful',
+            'message': 'product added',
+            'data': sale_added
+        }
+        return jsonify(response_object), 201                
