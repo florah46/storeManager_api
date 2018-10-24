@@ -28,3 +28,6 @@ class Routes:
 
         app.add_url_rule('/api/v1/sales/', view_func=SaleOrderController.as_view('add_saleOrder'),
                         methods=["POST"], strict_slashes=False)
+        
+        app.add_url_rule('/api/v1/sales/', view_func=SaleOrderController.as_view('get_sales'),
+                        methods=["GET"], strict_slashes=False)

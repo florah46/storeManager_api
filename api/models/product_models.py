@@ -82,7 +82,10 @@ class SaleOrder:
             "product_quantity": new_sale.quantity
         }
         self.SaleOrder.append(sale_details)
-        return self.SaleOrder 
+        return self.SaleOrder
+
+    def get_sales(self):
+        return self.SaleOrders 
 
     SaleOrder=[]
 

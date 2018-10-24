@@ -69,4 +69,17 @@ class SaleOrderController(MethodView):
             'message': 'product added',
             'data': sale_added
         }
-        return jsonify(response_object), 201                
+        return jsonify(response_object), 201   
+
+
+    def get(self,seller=None):
+        if seller:
+            return self.get_single(seller)
+        else:
+            all_sellers = self.sale_data.get_sales()
+            response_object = {
+                'message': 'Success',
+                'data': all_sellers
+            } 
+            return jsonify(response_object), 200  
+             
