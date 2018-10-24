@@ -85,7 +85,16 @@ class SaleOrder:
         return self.SaleOrder
 
     def get_sales(self):
-        return self.SaleOrders 
+        return self.SaleOrders
+
+    def get_single_sale(self, seller):
+        for sale in self.SaleOrder:
+            if sale['seller'] == seller:
+                response_object = {
+                    'status': 'success',
+                    'data': sale
+                }
+                return jsonify(response_object), 200 
 
     SaleOrder=[]
 

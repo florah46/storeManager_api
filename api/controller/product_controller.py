@@ -82,4 +82,13 @@ class SaleOrderController(MethodView):
                 'data': all_sellers
             } 
             return jsonify(response_object), 200  
-             
+
+
+def get_single(self,seller):
+        for sale in self.sale_data.get_sales():
+            if sale['seller'] == seller:
+                response_object = {
+                    'message': 'Product got',
+                    'data': sale
+                }
+                return jsonify(response_object), 200
