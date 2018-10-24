@@ -84,6 +84,7 @@ class SaleOrder:
         self.SaleOrder.append(sale_details)
         return self.SaleOrder 
 
+    SaleOrder=[]
 
 
 
