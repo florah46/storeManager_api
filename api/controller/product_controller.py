@@ -26,7 +26,7 @@ class ProductController(MethodView):
         return jsonify(response_object), 201
 
         
-   def get(self,product_id=None):
+    def get(self,product_id=None):
         if product_id:
             return self.get_single(product_id)
         else:
@@ -37,4 +37,12 @@ class ProductController(MethodView):
             } 
             return jsonify(response_object), 200  
 
-    
+    def get_single(self,product_id):
+        for item in self.product_data.get_products():
+            if item['product_id'] == product_id:
+
+                response_object = {
+                    'message': 'Product got',
+                    'data': item
+                }
+                return jsonify(response_object), 200    

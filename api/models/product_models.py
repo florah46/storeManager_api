@@ -41,7 +41,7 @@ class Product:
             return product_id is product[-1]["product_id"]+1
 
     def get_products(self):
-    return product
+        return product
 
 
     def get_single_product(self, product_id):
