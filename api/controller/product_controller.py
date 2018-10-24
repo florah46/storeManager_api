@@ -26,13 +26,15 @@ class ProductController(MethodView):
         return jsonify(response_object), 201
 
         
-    def get(self,seller=None):
-        if seller:
-            return self.get_single(seller)
+   def get(self,product_id=None):
+        if product_id:
+            return self.get_single(product_id)
         else:
-            all_sellers = self.sale_data.get_sales()
+            all_products = self.product_data.get_products()
             response_object = {
                 'message': 'Success',
-                'data': all_sellers
+                'data': all_products
             } 
-            return jsonify(response_object), 200
+            return jsonify(response_object), 200  
+
+    

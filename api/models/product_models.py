@@ -43,4 +43,15 @@ class Product:
     def get_products(self):
     return product
 
+
+    def get_single_product(self, product_id):
+        for item in product:
+            if item['product_id'] == product_id:
+                response_object = {
+                    'status': 'success',
+                    'data': item
+                }
+                return jsonify(response_object), 200
+            
+
 product=[]

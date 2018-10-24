@@ -20,3 +20,6 @@ class Routes:
                         
         app.add_url_rule('/api/v1/products/', view_func=ProductController.as_view('get_products'),
                         methods=["GET"], strict_slashes=False)
+
+        app.add_url_rule('/api/v1/products/<int:product_id>', view_func=ProductController.as_view('get_single_product'),
+                        methods=["GET"], strict_slashes=False)                
