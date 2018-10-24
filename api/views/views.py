@@ -1,4 +1,5 @@
 from api.controller.product_controller import ProductController
+from api.controller.product_controller import SaleOrderController
 
 
 class Routes:
@@ -27,4 +28,3 @@ class Routes:
 
         app.add_url_rule('/api/v1/sales/', view_func=SaleOrderController.as_view('add_saleOrder'),
                         methods=["POST"], strict_slashes=False)
-                        
