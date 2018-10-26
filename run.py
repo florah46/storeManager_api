@@ -1,0 +1,7 @@
+"""
+file to run the end points
+"""
+from api.app import app
+
+if __name__ == '__main__':
+    app.run(debug=True)
