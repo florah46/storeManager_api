@@ -9,7 +9,10 @@ import datetime
 from flask import jsonify, request
 PRODUCTS = list()
 
-
+class Home:
+    def homePage(self):
+        return "Welcome to Store Manager"
+        
 class Product:
 
     def __init__(self, name=None, brand=None, price=None, quantity=None):

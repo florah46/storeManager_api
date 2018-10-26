@@ -2,7 +2,10 @@ from flask import request, jsonify
 from flask.views import MethodView
 from .product_models import PRODUCTS, Product
 
-
+class HomeController(MethodView):
+    def post(self):
+       
+        return "Welcome to Store Manager"
 
 
 class ProductController(MethodView):
