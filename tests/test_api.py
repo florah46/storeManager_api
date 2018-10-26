@@ -18,13 +18,14 @@ class TestStoreManager(unittest.TestCase):
             content_type='application/json'
         )
         self.assertEqual(post_data.status_code, 201)
+    def test_get_product(self):
+        post_data = self.client.get(
+            '/api/v1/products/',
+            content_type='application/json'
+        )
+        self.assertEqual(post_data.status_code, 200)
 
-    # def test_add_product(self):
-
-    #     new_product = Product('Iphone7','phone','$450','12')
         
-    #     self.assertTrue(post_response['status'], 'Successful')
-    #     self.assertTrue(post_response['message'], ' Product added')
     #     self.assertTrue(post_response['data'])
     #     self.assertTrue(content_type, 'application/json')
     #     self.assertEqual(status_code, 201)
